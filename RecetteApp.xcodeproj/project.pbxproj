@@ -16,6 +16,10 @@
 		10F195E727BE7AE00090D607 /* RecetteAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F195E627BE7AE00090D607 /* RecetteAppTests.swift */; };
 		10F195F127BE7AE00090D607 /* RecetteAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F195F027BE7AE00090D607 /* RecetteAppUITests.swift */; };
 		10F195F327BE7AE00090D607 /* RecetteAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F195F227BE7AE00090D607 /* RecetteAppUITestsLaunchTests.swift */; };
+		10F1960027BE818B0090D607 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10F195FF27BE818B0090D607 /* GoogleService-Info.plist */; };
+		10F1960327BE859A0090D607 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 10F1960227BE859A0090D607 /* FirebaseAuth */; };
+		10F1960527BE859A0090D607 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 10F1960427BE859A0090D607 /* FirebaseFirestore */; };
+		10F1960727BE859A0090D607 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 10F1960627BE859A0090D607 /* FirebaseFirestoreSwift-Beta */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,7 @@
 		10F195EC27BE7AE00090D607 /* RecetteAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecetteAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F195F027BE7AE00090D607 /* RecetteAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetteAppUITests.swift; sourceTree = "<group>"; };
 		10F195F227BE7AE00090D607 /* RecetteAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetteAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10F195FF27BE818B0090D607 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F1960727BE859A0090D607 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				10F1960327BE859A0090D607 /* FirebaseAuth in Frameworks */,
+				10F1960527BE859A0090D607 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +106,7 @@
 		10F195CF27BE7ADD0090D607 /* RecetteApp */ = {
 			isa = PBXGroup;
 			children = (
+				10F195FF27BE818B0090D607 /* GoogleService-Info.plist */,
 				10F195D027BE7ADD0090D607 /* RecetteAppApp.swift */,
 				10F195D227BE7ADD0090D607 /* ContentView.swift */,
 				10F195D427BE7AE00090D607 /* Assets.xcassets */,
@@ -149,6 +158,11 @@
 			dependencies = (
 			);
 			name = RecetteApp;
+			packageProductDependencies = (
+				10F1960227BE859A0090D607 /* FirebaseAuth */,
+				10F1960427BE859A0090D607 /* FirebaseFirestore */,
+				10F1960627BE859A0090D607 /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = RecetteApp;
 			productReference = 10F195CD27BE7ADD0090D607 /* RecetteApp.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 10F195C427BE7ADD0090D607;
+			packageReferences = (
+				10F1960127BE859A0090D607 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 10F195CE27BE7ADD0090D607 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,6 +256,7 @@
 			files = (
 				10F195D827BE7AE00090D607 /* Preview Assets.xcassets in Resources */,
 				10F195D527BE7AE00090D607 /* Assets.xcassets in Resources */,
+				10F1960027BE818B0090D607 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Polytech.RecetteApp;
+				PRODUCT_BUNDLE_IDENTIFIER = souhailakesbi.RecetteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -469,7 +487,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Polytech.RecetteApp;
+				PRODUCT_BUNDLE_IDENTIFIER = souhailakesbi.RecetteApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -593,6 +611,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10F1960127BE859A0090D607 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10F1960227BE859A0090D607 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10F1960127BE859A0090D607 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		10F1960427BE859A0090D607 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10F1960127BE859A0090D607 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		10F1960627BE859A0090D607 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10F1960127BE859A0090D607 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		10F195DB27BE7AE00090D607 /* RecetteApp.xcdatamodeld */ = {

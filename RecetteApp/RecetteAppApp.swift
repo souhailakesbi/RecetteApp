@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct RecetteAppApp: App {
@@ -17,4 +18,10 @@ struct RecetteAppApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
+    
+    init(){
+        FirebaseApp.configure()
+    }
+
 }
+
