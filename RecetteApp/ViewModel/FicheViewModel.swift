@@ -41,6 +41,14 @@ class FicheViewModel : FicheDelegate{
         self.nbCouverts = nbCouverts
     }
     
+    func change(etapes : [String   : [Double : Ingredient  ] ]){
+        self.etapes = etapes
+    }
+    
+    func change(quantite :[Double : Ingredient  ] ){
+        self.quantite = quantite
+    }
+    
     var delegate : FicheDelegate?
     var fiche : Fiche
     
@@ -50,6 +58,19 @@ class FicheViewModel : FicheDelegate{
     var materielSpecifique : String?
     var responsable : String
     var nbCouverts : Double
+    var quantite : [Double : Ingredient  ]
+    var etapes : [String   : [Double : Ingredient  ] ]
+
+    public var coutSimple : Double{
+        var total : Double = 0
+        for (_, _) in etapes{
+            for (qte , ingredient) in quantite{
+                total = total + ingredient.prix_unitaire * qte
+            }
+        }
+        return total
+    }
+
     
     init(from fiche : Fiche){
         self.fiche = fiche
@@ -59,6 +80,8 @@ class FicheViewModel : FicheDelegate{
         self.materielSpecifique = fiche.materielSpecifique
         self.responsable = fiche.responsable
         self.nbCouverts = fiche.nbCouverts
+        self.etapes = fiche.etapes
+        self.quantite = fiche.quantite
         self.fiche.delegate = self
     }
     

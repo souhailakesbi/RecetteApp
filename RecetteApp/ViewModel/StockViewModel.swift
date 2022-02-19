@@ -34,4 +34,9 @@ class StockViewModel: StockDelegate{
     }
     
     
+    public var  calculCoutTotal : Double {
+        return self.quantite * self.ingredient_stock.prix_unitaire
+    }
+    
+    
 }
